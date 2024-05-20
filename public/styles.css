@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.meter, .channel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.meter h2, .channel h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.meter-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.meter-info, .channel-info, .meter-graph, .channel-graph {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.channel {
+    background-color: #f9f9f9;
+    flex-direction: row;
+}
+
+.channel-info {
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.meter-graph, .channel-graph {
+    margin-left: 20px;
+}
+
+.meter-graph {
+    flex: 1;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
