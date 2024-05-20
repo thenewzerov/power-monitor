@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     async function fetchData() {
         try {
-            const response = await fetch('../test/test.json');
+            const response = await fetch('/api/meters/readings');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (!(item.eid.toString() in graphData)) {
                 graphData[item.eid.toString()] = [];
             }
-            graphData[item.eid].push({x: item.timestamp, y: item.actEnergyDlvd});
+            graphData[item.eid].push({x: item.timestamp, y: item.activePower});
 
             const meterInfo = `
             <p><strong>Timestamp:</strong> ${new Date(item.timestamp * 1000).toLocaleString()}</p>
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     if (!(channel.eid.toString() in graphData)) {
                         graphData[channel.eid.toString()] = [];
                     }
-                    graphData[channel.eid].push({x: item.timestamp, y: channel.actEnergyDlvd});
+                    graphData[channel.eid].push({x: item.timestamp, y: channel.activePower});
 
 
                     let channelDiv = document.getElementById(`channel-${channel.eid}`);

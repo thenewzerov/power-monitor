@@ -6,7 +6,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy the web files to the appropriate directory
 COPY public /usr/share/nginx/html
-COPY test /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
