@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 outputDiv.appendChild(meterDiv);
 
                 const meterLayout = `
-                <h2>Meter ID: ${item.eid}</h2>
+                <h2 class="meter-title" >Meter ID: ${item.eid}</h2>
                 <div class="meter-info" id="meterinfo-${item.eid}">
                 </div>
                 <div class="meter-graph">
@@ -38,6 +38,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 </div>
             `;
                 meterDiv.innerHTML = meterLayout;
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    const meterTitles = document.querySelectorAll('.meter-title');
+
+                    meterTitles.forEach(title => {
+                        title.addEventListener('click', function () {
+                            const meterContent = this.nextElementSibling;
+                            meterContent.classList.toggle('hidden');
+                        });
+                    });
+                });
             }
 
             if (!(item.eid.toString() in graphData)) {
