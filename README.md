@@ -7,8 +7,14 @@ It's run through a simple Nginx Docker Container
 
 ### Clone the repository
 ```bash
-git clone 
+git clone git@github.com:thenewzerov/power-monitor.git
 ```
+
+### Change into the directory
+```bash
+cd power-monitor
+```
+
 
 ### Update the ip in the nginx.conf file
 
